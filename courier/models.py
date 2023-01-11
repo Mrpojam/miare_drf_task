@@ -7,13 +7,14 @@ class Courier(models.Model):
     last_name = models.CharField(max_length=160)
     
     def __str__ (self):
-        pass
+        return "%s_%s" % (self.first_name, self.last_name)
 class Trip(models.Model):
-    Date = models.DateTimeField()
+    Date = models.DateField()
     income = models.BigIntegerField()
     courier = models.ForeignKey(Courier, on_delete=models.CASCADE)
+    
     def __str__ (self):
-        pass
+        return "%s %s %s" % (self.courier, str(self.Date), str(self.income))
 
     class Meta:
-        ordering = ['Data', 'courier']
+        ordering = ['Date', 'courier']
