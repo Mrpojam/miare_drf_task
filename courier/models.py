@@ -8,9 +8,18 @@ class Courier(models.Model):
     
     def __str__ (self):
         return "%s_%s" % (self.first_name, self.last_name)
-class Trip(models.Model):
+
+class Income(models.Model):
+
+    CHOICES = (
+        ('In', 'Income'),
+        ('D', 'Decrease'),
+        ('I', 'Increase')
+    )
+
     Date = models.DateField()
-    income = models.BigIntegerField()
+    type = models.CharField(max_length=2, choices=CHOICES, default='In')
+    value = models.BigIntegerField()
     courier = models.ForeignKey(Courier, on_delete=models.CASCADE)
     
     def __str__ (self):
