@@ -19,7 +19,7 @@ class Income(models.Model):
 
     Date = models.DateField()
     type = models.CharField(max_length=2, choices=CHOICES, default='In')
-    value = models.BigIntegerField()
+    value = models.PositiveBigIntegerField()
     courier = models.ForeignKey(Courier, on_delete=models.CASCADE)
     
     def __str__ (self):
