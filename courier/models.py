@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Courier(models.Model):
-    id = models.PositiveIntegerField(primary_key=True)
+    id = models.PositiveIntegerField(primary_key=True, unique=True)
     first_name = models.CharField(max_length=160)
     last_name = models.CharField(max_length=160)
     
