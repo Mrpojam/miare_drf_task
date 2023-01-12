@@ -4,8 +4,8 @@ from . import views
 
 router = routers.DefaultRouter()
 router.register('courier', views.CourierView)
-router.register('income', views.IncomeView)
 
 urlpatterns = [
-    path('v1/', include(router.urls)), 
+    path('', include(router.urls)), 
+    path('income/', views.IncomeView.as_view(), name='  ')
 ]

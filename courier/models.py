@@ -23,7 +23,7 @@ class Income(models.Model):
     courier = models.ForeignKey(Courier, on_delete=models.CASCADE)
     
     def __str__ (self):
-        return "%s %s %s" % (self.courier, str(self.Date), str(self.income))
+        return "%s %s %s" % (self.courier, str(self.Date), str(self.value))
 
     class Meta:
         ordering = ['Date', 'courier']
