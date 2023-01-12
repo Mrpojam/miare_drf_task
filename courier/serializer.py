@@ -19,9 +19,10 @@ class IncomeSerializer(serializers.ModelSerializer):
         instance.save()
         return instance
 
-
-class IncomeForDaySerializer(serializers.Serializer):
-    first_name = serializers.CharField(max_length = 160)
-    last_name = serializers.CharField(max_length = 160)
-    date = serializers.DateField()
+class IncomeForWeekSerializer(serializers.Serializer):
+    courier = serializers.IntegerField()
+    start_date = serializers.DateField()
+    end_date = serializers.DateField()
     income = serializers.IntegerField()
+
+    

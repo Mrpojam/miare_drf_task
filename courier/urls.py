@@ -7,5 +7,6 @@ router.register('courier', views.CourierView)
 
 urlpatterns = [
     path('', include(router.urls)), 
-    path('income/', views.IncomeView.as_view(), name='  ')
+    path('income/', views.IncomeView.as_view(), name="income"),
+    path('income/week', views.IncomeForWeekView.as_view(), name="weekincome")
 ]
